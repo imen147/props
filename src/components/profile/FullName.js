@@ -1,7 +1,8 @@
 
 import React from 'react';
 
-const fullName = (props) => {
+const FullName = (props) => {
+    console.log(props);
 
   
     return (
@@ -14,10 +15,10 @@ const fullName = (props) => {
     }}
     >  {props.firstName} {props.lastName}</h1>
 
-    {props.children}
+    
         </div>
 
     );
 };
 
-export default fullName;
+export default FullName;
