@@ -1,33 +1,22 @@
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import Headder from './components/profile/Headder';
-import Bio from './components/profile/Bio';
-import FullName from './components/profile/FullName';
-import Profession from './components/profile/Profession';
-
+import { Button } from "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { CardImg } from "react-bootstrap";
+import "./App.css";
+import Profile from "./components/profile/profile";
 
 function App() {
+  const name="imen"
+  const img="https://d5nunyagcicgy.cloudfront.net/external_assets/hero_examples/hair_beach_v391182663/original.jpeg"
+   function handleName() {
+    alert(`my name is ${name}`)
+  } 
   return (
     <div className="App">
-      <Headder/>
-      <div style={{margin:"150px 100px",fontSize:"1.2rem"}}>
-    <h1 style={{color:"blue", size:"ss100px"}}>  My-Profile </h1>
-    
-      < FullName firstName="imen" lastName="benbelgacem">
-      <p>Glad to know you</p>
-      </FullName>
-      <br/>
-      <div style={{border:"black double",  marginTop:"20px",background:"silver"}} id="about">
-      <Bio Fullname="imen benbelgacem" Age="32" Gender="Female" Interests="Learning,Farming ,Taking care of animals,
-       Watching TV , Eating and Sleeping"  />
-      </div>
-      </div>
-      <div id="profession"><Profession/></div>
-      
-      
-      
-      
+      <Profile fullName={name} bio="gomycode" profession="ingenieur">
+       
+        <CardImg src={img}/>
+      </Profile>
+      <button onClick={handleName} >click here </button>
     </div>
   );
 }
